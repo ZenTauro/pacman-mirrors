@@ -441,8 +441,13 @@ class PacmanMirrors:
                             "protocols": server["protocols"],
                             "url": server["url"]
                         })
-                        server["protocols"] = self.config["protocols"]
-                        mirror_list.append(server)
+                        # mirror list
+                        try:
+                            _ = self.config["protocols"][0]
+                            mirror["protocols"] = self.config["protocols"]
+                        except IndexError:
+                            pass
+                        mirror_list.append(mirror)
             if self.default and mirror_list:
                 if self.config["method"] == "rank":
                     mirror_list = self.test_mirrors(mirror_list)
