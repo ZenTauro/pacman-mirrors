@@ -219,16 +219,6 @@ class PacmanMirrors:
             self.api_config(get_branch=True)
             sys.exit(0)
 
-        """
-        #############################################################
-        Root required
-        #############################################################
-        """
-        if os.getuid() != 0:
-            print(".: {} {}".format(
-                txt.ERR_CLR, txt.MUST_BE_ROOT))
-            sys.exit(1)
-
         if args.branch:
             self.config["branch"] = args.branch
 
@@ -308,10 +298,10 @@ class PacmanMirrors:
         Api configuration function
         :param set_pfx: prefix to the config paths
         :param set_branch: replace branch in pacman-mirrors.conf
-        :param re_branch: replace branch in mirrorlist
+        :param re_branch: replace branch in mirror_list
         :param get_branch: sys.exit with branch
         :param set_protocols: replace protocols in pacman-mirrors.conf
-        :param set_url: replace mirror url in mirrorlist
+        :param set_url: replace mirror url in mirror_list
         """
         if set_url is None:
             set_url = ""
@@ -448,7 +438,7 @@ class PacmanMirrors:
             shuffle(mirror_selection)
 
         """
-        Try to write mirrorlist
+        Try to write mirror list
         """
         try:
             _ = mirror_selection[0]
@@ -461,9 +451,9 @@ class PacmanMirrors:
             print(".: {} {}".format(txt.WRN_CLR, txt.NO_SELECTION))
             print(".: {} {}".format(txt.INF_CLR, txt.NO_CHANGE))
 
-    def build_fasttrack_mirror_list(self, number):
+    def build_fast_track_mirror_list(self, number):
         """
-        Fast-track the mirrorlist by filtering only up-to-date mirrors
+        Fast-track the mirror list by filtering only up-to-date mirrors
         The function takes into account the branch selected by the user
           either on commandline or in pacman-mirrors.conf.
         The function returns a filtered list consisting of a number of mirrors
@@ -935,7 +925,7 @@ class PacmanMirrors:
         * Default
         """
         if self.fasttrack:
-            self.build_fasttrack_mirror_list(self.fasttrack)
+            self.build_fast_track_mirror_list(self.fasttrack)
         elif self.interactive:
             self.build_interactive_mirror_list()
         else:
