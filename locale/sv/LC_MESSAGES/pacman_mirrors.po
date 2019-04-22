@@ -4,13 +4,14 @@
 # project.
 # 
 # Translators:
+# Simon, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-pacman-mirrors\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-10-23 20:55+0200\n"
-"PO-Revision-Date: 2017-10-25 07:54+0000\n"
-"Last-Translator: philm <philm@manjaro.org>\n"
+"PO-Revision-Date: 2019-04-07 21:21+0000\n"
+"Last-Translator: Simon\n"
 "Language-Team: Swedish (http://www.transifex.com/manjarolinux/manjaro-pacman-mirrors/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,368 +22,368 @@ msgstr ""
 
 #: pacman_mirrors/constants/txt.py:29
 msgid "ERROR"
-msgstr ""
+msgstr "FEL"
 
 #: pacman_mirrors/constants/txt.py:30
 msgid "INFO"
-msgstr ""
+msgstr "INFORMATION"
 
 #: pacman_mirrors/constants/txt.py:31
 msgid "WARNING"
-msgstr ""
+msgstr "VARNING"
 
 #: pacman_mirrors/constants/txt.py:33
 msgid "HTTPException"
-msgstr ""
+msgstr "HTTPException"
 
 #: pacman_mirrors/constants/txt.py:34
 msgid "TIMEOUT"
-msgstr ""
+msgstr "TIMEOUT"
 
 #: pacman_mirrors/constants/txt.py:36
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: pacman_mirrors/constants/txt.py:37
 msgid "BRANCH"
-msgstr ""
+msgstr "BRANSCH"
 
 #: pacman_mirrors/constants/txt.py:38
 msgid "COUNTRY"
-msgstr ""
+msgstr "LAND"
 
 #: pacman_mirrors/constants/txt.py:39
 msgid "FILE"
-msgstr ""
+msgstr "FIL"
 
 #: pacman_mirrors/constants/txt.py:40
 msgid "METHOD"
-msgstr ""
+msgstr "METOD"
 
 #: pacman_mirrors/constants/txt.py:41
 msgid "METHODS"
-msgstr ""
+msgstr "METODER"
 
 #: pacman_mirrors/constants/txt.py:42
 msgid "MISC"
-msgstr ""
+msgstr "ÖVRIGT"
 
 #: pacman_mirrors/constants/txt.py:43
 msgid "NUMBER"
-msgstr ""
+msgstr "NUMMER"
 
 #: pacman_mirrors/constants/txt.py:44
 msgid "PATH"
-msgstr ""
+msgstr "SÖKVÄG"
 
 #: pacman_mirrors/constants/txt.py:45
 msgid "PREFIX"
-msgstr ""
+msgstr "PREFIX"
 
 #: pacman_mirrors/constants/txt.py:46
 msgid "PROTO"
-msgstr ""
+msgstr "PROTO"
 
 #: pacman_mirrors/constants/txt.py:47
 msgid "SECONDS"
-msgstr ""
+msgstr "SEKUNDER"
 
 #: pacman_mirrors/constants/txt.py:48 pacman_mirrors/constants/txt.py:125
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: pacman_mirrors/constants/txt.py:49
 msgid "USAGE"
-msgstr ""
+msgstr "ANVÄNDNING"
 
 #: pacman_mirrors/constants/txt.py:51
 msgid "Return branch from configuration"
-msgstr ""
+msgstr "Återvänd gren från konfiguration"
 
 #: pacman_mirrors/constants/txt.py:52
 msgid "Set prefix to"
-msgstr ""
+msgstr "Sätt prefix till"
 
 #: pacman_mirrors/constants/txt.py:53
 msgid "Replace protocols in configuration"
-msgstr ""
+msgstr "Ersätt protokoll i konfiguration"
 
 #: pacman_mirrors/constants/txt.py:54
 msgid "Replace branch in mirrorlist"
-msgstr ""
+msgstr "Ersätt gren i spegellista"
 
 #: pacman_mirrors/constants/txt.py:55
 msgid "Replace branch in configuration"
-msgstr ""
+msgstr "Ersätt gren i konfiguration"
 
 #: pacman_mirrors/constants/txt.py:56
 msgid "Replace mirror url in mirrorlist"
-msgstr ""
+msgstr "Ersätt spegel-URL i spegellista"
 
 #: pacman_mirrors/constants/txt.py:57
 msgid "Branch name"
-msgstr ""
+msgstr "Gren-namn"
 
 #: pacman_mirrors/constants/txt.py:58
 msgid "Comma separated list of countries, from which mirrors will be used"
-msgstr ""
+msgstr "Kommaseparerad lista av länder, varifrån speglar kommer användas"
 
 #: pacman_mirrors/constants/txt.py:60
 msgid "Load default mirror file"
-msgstr ""
+msgstr "Ladda standard spegellista"
 
 #: pacman_mirrors/constants/txt.py:61
 msgid "Generate mirrorlist with a number of up-to-date mirrors. Ignores:"
-msgstr ""
+msgstr "Generera spegellista med ett antal uppdaterade speglar. Ignorerar:"
 
 #: pacman_mirrors/constants/txt.py:63
 msgid "Generate mirrorlist with defaults"
-msgstr ""
+msgstr "Generera spegellista med standardvärden"
 
 #: pacman_mirrors/constants/txt.py:64
 msgid "Get current country using geolocation"
-msgstr ""
+msgstr "Hämta nuvarande land med geolocation"
 
 #: pacman_mirrors/constants/txt.py:65
 msgid "List all available countries"
-msgstr ""
+msgstr "Lista alla tillgängliga länder"
 
 #: pacman_mirrors/constants/txt.py:66
 msgid "Generate custom mirrorlist"
-msgstr ""
+msgstr "Generera egen spegellista"
 
 #: pacman_mirrors/constants/txt.py:67
 msgid "Generation method"
-msgstr ""
+msgstr "Generationsmetod"
 
 #: pacman_mirrors/constants/txt.py:68
 msgid "Use to skip generation of mirrorlist"
-msgstr ""
+msgstr "Använd för att hoppa över generering av spegellista"
 
 #: pacman_mirrors/constants/txt.py:69
 msgid "Quiet mode - less verbose output"
-msgstr ""
+msgstr "Tyst läge - mindre utmatning av kod"
 
 #: pacman_mirrors/constants/txt.py:70
 msgid "Syncronize pacman databases"
-msgstr ""
+msgstr "Synkronisera pacmandatabaser"
 
 #: pacman_mirrors/constants/txt.py:71
 msgid "Maximum waiting time for server response"
-msgstr ""
+msgstr "Maximal väntetid för serverrespons"
 
 #: pacman_mirrors/constants/txt.py:72
 msgid "Print the pacman-mirrors version"
-msgstr ""
+msgstr "Visa version av pacman-speglar"
 
 #: pacman_mirrors/constants/txt.py:74
 msgid "Branch in config is changed"
-msgstr ""
+msgstr "Gren i konfiguration är ändrad"
 
 #: pacman_mirrors/constants/txt.py:75
 msgid "Protocols in config is changed"
-msgstr ""
+msgstr "Protokoll i konfiguration är ändrad"
 
 #: pacman_mirrors/constants/txt.py:76
 msgid "Re-branch requires a branch to work with"
-msgstr ""
+msgstr "Om-förgrening kräver en befintlig användbar gren"
 
 #: pacman_mirrors/constants/txt.py:77
 msgid "Branch in mirror list is changed"
-msgstr ""
+msgstr "Gren i spegellista har ändrats"
 
 #: pacman_mirrors/constants/txt.py:78
 msgid "Available countries are"
-msgstr ""
+msgstr "Tillgängliga länder är"
 
 #: pacman_mirrors/constants/txt.py:79
 msgid "Could not download from"
-msgstr ""
+msgstr "Kunde ej ladda ned från"
 
 #: pacman_mirrors/constants/txt.py:80
 msgid "Cannot read file"
-msgstr ""
+msgstr "Kan ej läsa fil"
 
 #: pacman_mirrors/constants/txt.py:81
 msgid "Cannot write file"
-msgstr ""
+msgstr "Kan ej skriva fil"
 
 #: pacman_mirrors/constants/txt.py:82
 msgid "Converting custom mirror file to new format"
-msgstr ""
+msgstr "Omvandla egen spegel-fil till nytt format"
 
 #: pacman_mirrors/constants/txt.py:83
 msgid "Custom mirror file"
-msgstr ""
+msgstr "Egen spegel-fil"
 
 #: pacman_mirrors/constants/txt.py:84
 msgid "Custom mirror file saved"
-msgstr ""
+msgstr "Egen spegel-fil sparad"
 
 #: pacman_mirrors/constants/txt.py:85
 msgid "User generated mirror list"
-msgstr ""
+msgstr "Användargenererad spegellista"
 
 #: pacman_mirrors/constants/txt.py:86
 msgid "Deprecated argument"
-msgstr ""
+msgstr "Utfasad parameter"
 
 #: pacman_mirrors/constants/txt.py:87
 msgid "doesn't exist."
-msgstr ""
+msgstr "existerar ej."
 
 #: pacman_mirrors/constants/txt.py:88
 msgid "Downloading mirrors from"
-msgstr ""
+msgstr "Laddar ned speglar från"
 
 #: pacman_mirrors/constants/txt.py:89
 msgid "Falling back to"
-msgstr ""
+msgstr "Faller tillbaka till"
 
 #: pacman_mirrors/constants/txt.py:90
 msgid "Internet connection appears to be down"
-msgstr ""
+msgstr "Internetanslutning verkar ej vara tillgänglig"
 
 #: pacman_mirrors/constants/txt.py:91
 msgid "Mirror list is generated using random method"
-msgstr ""
+msgstr "Spegellista är genererad av en slumpmässig metod"
 
 #: pacman_mirrors/constants/txt.py:92
 msgid "is missing"
-msgstr ""
+msgstr "saknas"
 
 #: pacman_mirrors/constants/txt.py:93
 msgid "The mirror file"
-msgstr ""
+msgstr "Spegellistan"
 
 #: pacman_mirrors/constants/txt.py:94
 msgid "Mirror list generated and saved to"
-msgstr ""
+msgstr "Spegellistan har genererats och sparats till"
 
 #: pacman_mirrors/constants/txt.py:95
 msgid "Generated on"
-msgstr ""
+msgstr "Genererades på"
 
 #: pacman_mirrors/constants/txt.py:96
 msgid "custom mirrorlist"
-msgstr ""
+msgstr "egen spegellista"
 
 #: pacman_mirrors/constants/txt.py:97
 msgid "to reset custom mirrorlist"
-msgstr ""
+msgstr "att återställa egen spegellista"
 
 #: pacman_mirrors/constants/txt.py:98
 msgid "default mirrorlist"
-msgstr ""
+msgstr "standard spegellista"
 
 #: pacman_mirrors/constants/txt.py:99
 msgid "to modify mirrorlist"
-msgstr ""
+msgstr "att modifiera spegellista"
 
 #: pacman_mirrors/constants/txt.py:100
 msgid "Mirror ranking is not available"
-msgstr ""
+msgstr "Spegelrankning är ej tillgängligt"
 
 #: pacman_mirrors/constants/txt.py:101
 msgid "Must have root privileges"
-msgstr ""
+msgstr "Kräver root-privilegier"
 
 #: pacman_mirrors/constants/txt.py:102
 msgid "The mirrors has not changed"
-msgstr ""
+msgstr "Speglarna har ej ändrats"
 
 #: pacman_mirrors/constants/txt.py:103
 msgid "No mirrors in selection"
-msgstr ""
+msgstr "Inga speglar i urval"
 
 #: pacman_mirrors/constants/txt.py:104
 msgid "Option"
-msgstr ""
+msgstr "Val"
 
 #: pacman_mirrors/constants/txt.py:105
 msgid "Please use"
-msgstr ""
+msgstr "Vänligen använd"
 
 #: pacman_mirrors/constants/txt.py:106
 msgid "Querying mirrors"
-msgstr ""
+msgstr "Kontaktar speglar"
 
 #: pacman_mirrors/constants/txt.py:107
 msgid "Randomizing mirror list"
-msgstr ""
+msgstr "Randomiserar spegellista"
 
 #: pacman_mirrors/constants/txt.py:108
 msgid "To remove custom config run "
-msgstr ""
+msgstr "För att ta bort egen konfiguration, kör"
 
 #: pacman_mirrors/constants/txt.py:109
 msgid "This may take some time"
-msgstr ""
+msgstr "Detta kan ta en stund"
 
 #: pacman_mirrors/constants/txt.py:110
 msgid "unknown country"
-msgstr ""
+msgstr "okänt land"
 
 #: pacman_mirrors/constants/txt.py:111
 msgid "Use 0 for all mirrors"
-msgstr ""
+msgstr "Använd 0 för alla speglar"
 
 #: pacman_mirrors/constants/txt.py:112
 msgid "Using all mirrors"
-msgstr ""
+msgstr "Använder alla speglar"
 
 #: pacman_mirrors/constants/txt.py:113
 msgid "Using custom mirror file"
-msgstr ""
+msgstr "Använder egen spegel-fil"
 
 #: pacman_mirrors/constants/txt.py:114
 msgid "Using default mirror file"
-msgstr ""
+msgstr "Använder standard spegel-fil"
 
 #: pacman_mirrors/constants/txt.py:115
 msgid "Writing mirror list"
-msgstr ""
+msgstr "Skriver spegellista"
 
 #: pacman_mirrors/constants/txt.py:118
 msgid "Manjaro mirrors by response time"
-msgstr ""
+msgstr "Manjaro-speglar efter responstid"
 
 #: pacman_mirrors/constants/txt.py:119
 msgid "Manjaro mirrors in random order"
-msgstr ""
+msgstr "Manjaro-speglar i slumpad ordning"
 
 #: pacman_mirrors/constants/txt.py:120
 msgid "Check mirrors for your personal list"
-msgstr ""
+msgstr "Kontrollera speglar till din personliga lista"
 
 #: pacman_mirrors/constants/txt.py:121
 msgid "Use"
-msgstr ""
+msgstr "Använd"
 
 #: pacman_mirrors/constants/txt.py:122
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: pacman_mirrors/constants/txt.py:123
 msgid "Resp"
-msgstr ""
+msgstr "Responstid"
 
 #: pacman_mirrors/constants/txt.py:124
 msgid "Sync"
-msgstr ""
+msgstr "Synkronisera"
 
 #: pacman_mirrors/constants/txt.py:126
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: pacman_mirrors/constants/txt.py:127
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: pacman_mirrors/constants/txt.py:128
 msgid "Confirm selections"
-msgstr ""
+msgstr "Bekräfta val"
 
 #: pacman_mirrors/constants/txt.py:129
 msgid "I want to use these mirrors"
-msgstr ""
+msgstr "Jag vill använda dessa speglar"

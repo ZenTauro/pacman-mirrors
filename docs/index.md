@@ -1,6 +1,6 @@
-% pacman-mirrors(8) Pacman-Mirrors 4.10.x User Manual
+% pacman-mirrors(8) Pacman-Mirrors 4.x User Manual
 %
-% March, 2018
+% April, 2019
 
 # NAME
 
@@ -8,7 +8,7 @@ pacman-mirrors - generate pacman mirrorlist for Manjaro Linux
 
 # SYNOPSIS
  pacman-mirrors [-h] [-f [NUMBER]] [-i [-d]] [-m METHOD]
-                [-c COUNTRY [COUNTRY...] | [--geoip]]
+                [-c COUNTRY [COUNTRY...] | [-g]] [--no-color]
                 [-l] [-lc] [-q] [-s] [-t SECONDS] [-v] [-n]
                 [--api] [-S/-B BRANCH] [-p PREFIX]
                         [-P PROTO [PROTO...]] [-R] [-U URL]
@@ -43,7 +43,7 @@ last syncronized with the master repo server. If no up-to-date mirrors
 is available in your chosen mirror pool, your mirror list will not be changed.
 This behavior can be overridden if so desired by using the *-s/--no-status* switch.
 
-# Network connection
+# NETWORK CONNECTION
 To be able to download the latest status file from repo.manjaro.org
 pacman-mirrors verifies network connection by opening up to
 three different websites. These sites are
@@ -53,6 +53,11 @@ three different websites. These sites are
 2. bitbucket.org
 
 The sites are chosen due to their generic nature and general availability.
+
+# MIRROR RANKING
+The mirrors are ranked by means of downloading a file from the systems core repo. 
+The file defaults to *core.db.tar.gz* but can be customized using the corresponding 
+entry in the configuration file. 
 
 ## MODES
 
@@ -170,6 +175,9 @@ which is up-to-date for your systems branch.
 
 -n, \--no-mirrorlist
 :   Use to skip generation of mirrorlist.
+
+\--no-color
+:   Suppress colorized messages.
 
 -q, \--quiet
 :   Make pacman-mirrors silent.
@@ -295,16 +303,47 @@ editing your pacman-mirrors configuration.
 
     *sudo pacman-mirrors -ap $prefix -S $branch -U $url*
 
+# DEFAULT CONFIGURATION
+
+    ##
+    ## /etc/pacman-mirrors.conf
+    ##
+    
+    ## Branch Pacman should use (stable, testing, unstable)
+    # Branch = stable
+    
+    ## Generation method
+    ## 1) rank   - rank mirrors depending on their access time
+    ## 2) random - randomly generate the output mirrorlist
+    # Method = rank
+    
+    ## Filename to use when ranking mirrors
+    ## The file must be present in core repo
+    # TestFile = core.db.tar.gz
+
+    ## Define protocols and priority
+    ##   separated by comma 'https,http' or 'http,https'
+    ## ATM available protocols are: http, https, ftp
+    ## Not specifying a protocol will ban the protocol from being used
+    ## If a mirror has more than one protocol defined only the first is written to the mirrorlist
+    ## Empty means all in reversed alphabetic order
+    # Protocols =
+    
+    ## When set to False - all certificates are accepted.
+    ## Use only if you fully trust all ssl-enabled mirrors.
+    # SSLVerify = True
+
+
 # MORE INFO
 * [https://wiki.manjaro.org/index.php?title=Pacman-mirrors](https://wiki.manjaro.org/index.php?title=Pacman-mirrors)
 * [https://wiki.manjaro.org/index.php?title=Create_your_own_Custom_Mirrorlist](https://wiki.manjaro.org/index.php?title=Create_your_own_Custom_Mirrorlist)
 
 # REPORTING BUGS
-   [https://github.com/manjaro/pacman-mirrors/issues](https://github.com/manjaro/pacman-mirrors/issues)
+   [https://gitlab.manjaro.org/applications/pacman-mirrors/issues](https://gitlab.manjaro.org/applications/pacman-mirrors/issues)
 
 # SEE ALSO
 
-The pacman-mirrors source code and all documentation may be downloaded from [https://github.com/manjaro/pacman-mirrors/archive/master.zip](https://github.com/manjaro/pacman-mirrors/archive/master.zip)
+The pacman-mirrors source code and all documentation may be downloaded from [https://gitlab.manjaro.org/applications/pacman-mirrors/](https://gitlab.manjaro.org/applications/pacman-mirrors/)
 
 # AUTHORS
 

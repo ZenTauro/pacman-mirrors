@@ -139,7 +139,7 @@ $ python -m unittest tests.test_pacman_mirrors
 ## Developing environment
 
 * An editor of choice e.g.
-   * Visual Studio Code `yay -S visual-studio-code`
+   * Visual Studio Code `pacman -Syu code`
    * PyCharm Community `pacman -Syu pycharm-community`
 * Pandoc converter `pacman -Syu pandoc`
 * Python environment
@@ -147,7 +147,7 @@ $ python -m unittest tests.test_pacman_mirrors
     ```
     $ git clone https://gitlab.manjaro.org/applications/pacman-mirrors.git
     $ cd pacman-mirrors
-    $ sudo pacman -Syu python-pip python-virtualenvwrapper
+    $ sudo pacman -Syu python-virtualenvwrapper
     $ mkvirtualenv pacman-mirrors
     $ python setup.py develop
     $ pip install mkdocs coverage babel flake8 npyscreen transifex-client

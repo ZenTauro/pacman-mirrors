@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [4.14.2] 2019-04-22
+* pulled transifex translation
+* updated documentation (man page)
+
 ## [4.14.1] 2019-01-03
 * new geo location service
 

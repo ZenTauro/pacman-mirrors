@@ -4,13 +4,15 @@
 # project.
 # 
 # Translators:
-# Hsiu-Ming Chang <cges30901@gmail.com>, 2017
+# byStarTW (pan93412) <pan93412@gmail.com>, 2018
+# Hsiu-Ming Chang <cges30901@gmail.com>, 2017,2019
+# 江昱輝 <darkanglephantom@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: manjaro-pacman-mirrors\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-10-23 20:55+0200\n"
-"PO-Revision-Date: 2017-10-30 13:25+0000\n"
+"PO-Revision-Date: 2019-03-27 14:15+0000\n"
 "Last-Translator: Hsiu-Ming Chang <cges30901@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/manjarolinux/manjaro-pacman-mirrors/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -22,15 +24,15 @@ msgstr ""
 
 #: pacman_mirrors/constants/txt.py:29
 msgid "ERROR"
-msgstr ""
+msgstr "錯誤"
 
 #: pacman_mirrors/constants/txt.py:30
 msgid "INFO"
-msgstr ""
+msgstr "訊息"
 
 #: pacman_mirrors/constants/txt.py:31
 msgid "WARNING"
-msgstr ""
+msgstr "警告"
 
 #: pacman_mirrors/constants/txt.py:33
 msgid "HTTPException"
@@ -38,7 +40,7 @@ msgstr "HTTPException"
 
 #: pacman_mirrors/constants/txt.py:34
 msgid "TIMEOUT"
-msgstr ""
+msgstr "連線超時"
 
 #: pacman_mirrors/constants/txt.py:36
 msgid "API"
@@ -46,11 +48,11 @@ msgstr "API"
 
 #: pacman_mirrors/constants/txt.py:37
 msgid "BRANCH"
-msgstr ""
+msgstr "BRANCH"
 
 #: pacman_mirrors/constants/txt.py:38
 msgid "COUNTRY"
-msgstr ""
+msgstr "國家"
 
 #: pacman_mirrors/constants/txt.py:39
 msgid "FILE"
@@ -58,19 +60,19 @@ msgstr "檔案"
 
 #: pacman_mirrors/constants/txt.py:40
 msgid "METHOD"
-msgstr ""
+msgstr "方法"
 
 #: pacman_mirrors/constants/txt.py:41
 msgid "METHODS"
-msgstr ""
+msgstr "方法"
 
 #: pacman_mirrors/constants/txt.py:42
 msgid "MISC"
-msgstr ""
+msgstr "雜項"
 
 #: pacman_mirrors/constants/txt.py:43
 msgid "NUMBER"
-msgstr ""
+msgstr "數字"
 
 #: pacman_mirrors/constants/txt.py:44
 msgid "PATH"
@@ -78,11 +80,11 @@ msgstr "路徑"
 
 #: pacman_mirrors/constants/txt.py:45
 msgid "PREFIX"
-msgstr ""
+msgstr "前綴"
 
 #: pacman_mirrors/constants/txt.py:46
 msgid "PROTO"
-msgstr ""
+msgstr "協定"
 
 #: pacman_mirrors/constants/txt.py:47
 msgid "SECONDS"
@@ -94,31 +96,31 @@ msgstr "URL"
 
 #: pacman_mirrors/constants/txt.py:49
 msgid "USAGE"
-msgstr ""
+msgstr "用法"
 
 #: pacman_mirrors/constants/txt.py:51
 msgid "Return branch from configuration"
-msgstr ""
+msgstr "從設定檔回傳分支"
 
 #: pacman_mirrors/constants/txt.py:52
 msgid "Set prefix to"
-msgstr ""
+msgstr "將前綴設定為"
 
 #: pacman_mirrors/constants/txt.py:53
 msgid "Replace protocols in configuration"
-msgstr ""
+msgstr "更改設定檔中的通訊協定"
 
 #: pacman_mirrors/constants/txt.py:54
 msgid "Replace branch in mirrorlist"
-msgstr ""
+msgstr "取代鏡像清單中的分支"
 
 #: pacman_mirrors/constants/txt.py:55
 msgid "Replace branch in configuration"
-msgstr ""
+msgstr "取代設定檔中的分支"
 
 #: pacman_mirrors/constants/txt.py:56
 msgid "Replace mirror url in mirrorlist"
-msgstr ""
+msgstr "替換鏡像清單中的鏡像"
 
 #: pacman_mirrors/constants/txt.py:57
 msgid "Branch name"
@@ -134,7 +136,7 @@ msgstr "讀取自訂鏡像檔案"
 
 #: pacman_mirrors/constants/txt.py:61
 msgid "Generate mirrorlist with a number of up-to-date mirrors. Ignores:"
-msgstr ""
+msgstr "產生具有某個數量的最新鏡像的鏡像清單。忽略："
 
 #: pacman_mirrors/constants/txt.py:63
 msgid "Generate mirrorlist with defaults"
@@ -142,7 +144,7 @@ msgstr "使用預設值產生鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:64
 msgid "Get current country using geolocation"
-msgstr ""
+msgstr "使用 geolocation 來取得目前的國家"
 
 #: pacman_mirrors/constants/txt.py:65
 msgid "List all available countries"
@@ -158,11 +160,11 @@ msgstr "產生方式"
 
 #: pacman_mirrors/constants/txt.py:68
 msgid "Use to skip generation of mirrorlist"
-msgstr ""
+msgstr "用來跳過鏡像清單的產生"
 
 #: pacman_mirrors/constants/txt.py:69
 msgid "Quiet mode - less verbose output"
-msgstr ""
+msgstr "安靜模式 - 較不詳細的輸出"
 
 #: pacman_mirrors/constants/txt.py:70
 msgid "Syncronize pacman databases"
@@ -170,27 +172,27 @@ msgstr "同步 pacman 資料庫"
 
 #: pacman_mirrors/constants/txt.py:71
 msgid "Maximum waiting time for server response"
-msgstr ""
+msgstr "等待伺服器回應的最大時間"
 
 #: pacman_mirrors/constants/txt.py:72
 msgid "Print the pacman-mirrors version"
-msgstr ""
+msgstr "顯示 pacman-mirrors 版本"
 
 #: pacman_mirrors/constants/txt.py:74
 msgid "Branch in config is changed"
-msgstr ""
+msgstr "設定檔中的分支已改變"
 
 #: pacman_mirrors/constants/txt.py:75
 msgid "Protocols in config is changed"
-msgstr ""
+msgstr "設定檔中的協定已被改變"
 
 #: pacman_mirrors/constants/txt.py:76
 msgid "Re-branch requires a branch to work with"
-msgstr ""
+msgstr "重新分支需要分支才能使用"
 
 #: pacman_mirrors/constants/txt.py:77
 msgid "Branch in mirror list is changed"
-msgstr ""
+msgstr "鏡像清單中的分支未被改變"
 
 #: pacman_mirrors/constants/txt.py:78
 msgid "Available countries are"
@@ -198,7 +200,7 @@ msgstr "可用的國家有"
 
 #: pacman_mirrors/constants/txt.py:79
 msgid "Could not download from"
-msgstr ""
+msgstr "無法下載從"
 
 #: pacman_mirrors/constants/txt.py:80
 msgid "Cannot read file"
@@ -210,7 +212,7 @@ msgstr "無法寫入檔案"
 
 #: pacman_mirrors/constants/txt.py:82
 msgid "Converting custom mirror file to new format"
-msgstr ""
+msgstr "正在將自訂鏡像檔案轉換至新的格式"
 
 #: pacman_mirrors/constants/txt.py:83
 msgid "Custom mirror file"
@@ -226,31 +228,31 @@ msgstr "使用者產生的鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:86
 msgid "Deprecated argument"
-msgstr ""
+msgstr "已棄用的參數"
 
 #: pacman_mirrors/constants/txt.py:87
 msgid "doesn't exist."
-msgstr "不存在。"
+msgstr "不存在"
 
 #: pacman_mirrors/constants/txt.py:88
 msgid "Downloading mirrors from"
-msgstr ""
+msgstr "正在下載鏡像從"
 
 #: pacman_mirrors/constants/txt.py:89
 msgid "Falling back to"
-msgstr ""
+msgstr "回復到"
 
 #: pacman_mirrors/constants/txt.py:90
 msgid "Internet connection appears to be down"
-msgstr ""
+msgstr "網路已斷開"
 
 #: pacman_mirrors/constants/txt.py:91
 msgid "Mirror list is generated using random method"
-msgstr ""
+msgstr "隨機產生鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:92
 msgid "is missing"
-msgstr ""
+msgstr "遺失"
 
 #: pacman_mirrors/constants/txt.py:93
 msgid "The mirror file"
@@ -262,7 +264,7 @@ msgstr "鏡像清單已產生並儲存到"
 
 #: pacman_mirrors/constants/txt.py:95
 msgid "Generated on"
-msgstr ""
+msgstr "產生於"
 
 #: pacman_mirrors/constants/txt.py:96
 msgid "custom mirrorlist"
@@ -270,19 +272,19 @@ msgstr "自訂鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:97
 msgid "to reset custom mirrorlist"
-msgstr ""
+msgstr "重設自訂鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:98
 msgid "default mirrorlist"
-msgstr ""
+msgstr "預設鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:99
 msgid "to modify mirrorlist"
-msgstr ""
+msgstr "修改鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:100
 msgid "Mirror ranking is not available"
-msgstr ""
+msgstr "鏡像排行不可用"
 
 #: pacman_mirrors/constants/txt.py:101
 msgid "Must have root privileges"
@@ -290,11 +292,11 @@ msgstr "需要有 root 權限"
 
 #: pacman_mirrors/constants/txt.py:102
 msgid "The mirrors has not changed"
-msgstr ""
+msgstr "鏡像清單並未改動"
 
 #: pacman_mirrors/constants/txt.py:103
 msgid "No mirrors in selection"
-msgstr ""
+msgstr "未選擇任何鏡像"
 
 #: pacman_mirrors/constants/txt.py:104
 msgid "Option"
@@ -306,15 +308,15 @@ msgstr "請使用"
 
 #: pacman_mirrors/constants/txt.py:106
 msgid "Querying mirrors"
-msgstr ""
+msgstr "正在查詢鏡像"
 
 #: pacman_mirrors/constants/txt.py:107
 msgid "Randomizing mirror list"
-msgstr ""
+msgstr "隨機產生鏡像清單中"
 
 #: pacman_mirrors/constants/txt.py:108
 msgid "To remove custom config run "
-msgstr ""
+msgstr "要移除自訂設定檔，執行"
 
 #: pacman_mirrors/constants/txt.py:109
 msgid "This may take some time"
@@ -326,7 +328,7 @@ msgstr "未知的國家"
 
 #: pacman_mirrors/constants/txt.py:111
 msgid "Use 0 for all mirrors"
-msgstr ""
+msgstr "所有鏡像使用 0"
 
 #: pacman_mirrors/constants/txt.py:112
 msgid "Using all mirrors"
@@ -342,19 +344,19 @@ msgstr "使用預設鏡像檔案"
 
 #: pacman_mirrors/constants/txt.py:115
 msgid "Writing mirror list"
-msgstr ""
+msgstr "寫入鏡像清單"
 
 #: pacman_mirrors/constants/txt.py:118
 msgid "Manjaro mirrors by response time"
-msgstr ""
+msgstr "Manjaro伺服器回應時間"
 
 #: pacman_mirrors/constants/txt.py:119
 msgid "Manjaro mirrors in random order"
-msgstr ""
+msgstr "隨機排序的 Manjaro 鏡像"
 
 #: pacman_mirrors/constants/txt.py:120
 msgid "Check mirrors for your personal list"
-msgstr ""
+msgstr "檢查您個人清單的鏡像"
 
 #: pacman_mirrors/constants/txt.py:121
 msgid "Use"
