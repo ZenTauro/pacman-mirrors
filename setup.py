@@ -70,7 +70,7 @@ setup(
     long_description=README + '\n\n' + CHANGELOG,
     author="Roland Singer, Esclapion, Philip Müller, Ramon Buldó, Hugo Posnic, Frede Hundewadt",
     author_email='fh@manjaro.org',
-    url='https://github.com/manjaro/pacman-mirrors',
+    url='https://gitlab.manjaro.org/applications/pacman-mirrors',
     packages=['pacman_mirrors',
               'pacman_mirrors.api',
               'pacman_mirrors.builder',
