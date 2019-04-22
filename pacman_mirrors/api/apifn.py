@@ -47,10 +47,6 @@ def find_mirrorlist_branch(filename: str, tty: bool = False) -> str:
         util.msg(message=f"{txt.CANNOT_READ_FILE}: {err.filename}: {err.strerror}",
                  urgency=txt.ERR_CLR,
                  tty=tty)
-        # print(".: {} {}: {}: {}".format(txt.ERR_CLR,
-        #                                 txt.CANNOT_READ_FILE,
-        #                                 err.filename,
-        #                                 err.strerror))
         sys.exit(2)
 
 
@@ -62,6 +58,7 @@ def normalize_config(filename: str) -> None:
     normalize_method(filename)
     normalize_protocols(filename)
     normalize_ssl(filename)
+    normalize_testfile(filename)
 
 
 def normalize_country(filename: str) -> None:
@@ -77,12 +74,12 @@ def normalize_country(filename: str) -> None:
         replaced = False
         for line in cnf:
             if lookfor in line:
-                tmp.write(default)
+                tmp.write(f"{default}")
                 replaced = True
             else:
-                tmp.write("{}".format(line))
+                tmp.write(f"{line}")
         if not replaced:
-            tmp.write(default)
+            tmp.write(f"{default}")
     os.replace(tmp.name, filename)
     os.chmod(filename, 0o644)
 
@@ -100,12 +97,12 @@ def normalize_method(filename: str) -> None:
         replaced = False
         for line in cnf:
             if lookfor in line:
-                tmp.write(default)
+                tmp.write(f"{default}")
                 replaced = True
             else:
-                tmp.write("{}".format(line))
+                tmp.write(f"{line}")
         if not replaced:
-            tmp.write(default)
+            tmp.write(f"{default}")
     os.replace(tmp.name, filename)
     os.chmod(filename, 0o644)
 
@@ -123,12 +120,12 @@ def normalize_protocols(filename: str) -> None:
         replaced = False
         for line in cnf:
             if lookfor in line:
-                tmp.write(default)
+                tmp.write(f"{default}")
                 replaced = True
             else:
-                tmp.write("{}".format(line))
+                tmp.write(f"{line}")
         if not replaced:
-            tmp.write(default)
+            tmp.write(f"{default}")
     os.replace(tmp.name, filename)
     os.chmod(filename, 0o644)
 
@@ -146,12 +143,35 @@ def normalize_ssl(filename: str) -> None:
         replaced = False
         for line in cnf:
             if lookfor in line:
-                tmp.write(default)
+                tmp.write(f"{default}")
                 replaced = True
             else:
-                tmp.write("{}".format(line))
+                tmp.write(f"{line}")
         if not replaced:
-            tmp.write(default)
+            tmp.write(f"{default}")
+    os.replace(tmp.name, filename)
+    os.chmod(filename, 0o644)
+
+
+def normalize_testfile(filename: str) -> None:
+    """Write default TestFile = core.db.tar.gz
+    :param filename:
+    """
+    lookfor = "TestFile ="
+    default = "# TestFile = core.db.tar.gz\n"
+    with open(
+        filename) as cnf, tempfile.NamedTemporaryFile(
+        "w+t", dir=os.path.dirname(
+            filename), delete=False) as tmp:
+        replaced = False
+        for line in cnf:
+            if lookfor in line:
+                tmp.write(f"{default}")
+                replaced = True
+            else:
+                tmp.write(f"{line}")
+        if not replaced:
+            tmp.write(f"{default}")
     os.replace(tmp.name, filename)
     os.chmod(filename, 0o644)
 
@@ -200,7 +220,7 @@ def write_config_branch(branch: str, filename: str, tty: bool = False, quiet: bo
                     tmp.write(branch)
                     replaced = True
                 else:
-                    tmp.write("{}".format(line))
+                    tmp.write(f"{line}")
             if not replaced:
                 tmp.write(branch)
         os.replace(tmp.name, filename)
@@ -208,19 +228,19 @@ def write_config_branch(branch: str, filename: str, tty: bool = False, quiet: bo
         if not quiet:
             util.msg(
                 message=f"{txt.API_CONF_RE_BRANCH}", urgency=txt.INF_CLR, tty=tty)
-            # print(".: {} {}".format(txt.INF_CLR, txt.API_CONF_RE_BRANCH))
     except OSError as err:
         util.msg(
             message=f"{txt.CANNOT_READ_FILE}: {err.filename}: {err.strerror}", urgency=txt.ERR_CLR, tty=tty)
-        # print(".: {} {}: {}: {}".format(txt.ERR_CLR,
-        #                                 txt.CANNOT_READ_FILE,
-        #                                 err.filename,
-        #                                 err.strerror))
         sys.exit(2)
 
 
 def write_mirrorlist_branch(newbranch: str, filename: str, tty: bool = False, quiet: bool = False) -> None:
-    """"""
+    """Write branch in mirrorlist
+    :param newbranch:
+    :param filename:
+    :param tty:
+    :param quiet:
+    """
     lookfor = "Server ="
     branch = find_mirrorlist_branch(filename=filename, tty=tty)
     try:
@@ -230,27 +250,27 @@ def write_mirrorlist_branch(newbranch: str, filename: str, tty: bool = False, qu
             for line in mirrorlist:
                 if lookfor in line:
                     line = line.replace(branch, newbranch)
-                    tmp.write("{}".format(line))
+                    tmp.write(f"{line}")
                 else:
-                    tmp.write("{}".format(line))
+                    tmp.write(f"{line}")
         os.replace(tmp.name, filename)
         os.chmod(filename, 0o644)
         if not quiet:
             util.msg(
                 message=f"{txt.API_MIRRORLIST_RE_BRANCH}", urgency=txt.INF_CLR, tty=tty)
-            # print(".: {} {}".format(txt.INF_CLR, txt.API_MIRRORLIST_RE_BRANCH))
     except OSError as err:
         util.msg(
             message=f"{txt.CANNOT_READ_FILE}: {err.filename}: {err.strerror}", urgency=txt.ERR_CLR, tty=tty)
-        # print(".: {} {}: {}: {}".format(txt.ERR_CLR,
-        #                                 txt.CANNOT_READ_FILE,
-        #                                 err.filename,
-        #                                 err.strerror))
         sys.exit(2)
 
 
 def write_protocols(protocols: str, filename: str, tty: bool = False, quiet: bool = False) -> None:
-    """Write branch"""
+    """Write protocols
+    :param protocols:
+    :param filename:
+    :param tty:
+    :param quiet:
+    """
     lookfor = "Protocols ="
     default = "# Protocols = \n"
     if protocols:
@@ -268,7 +288,7 @@ def write_protocols(protocols: str, filename: str, tty: bool = False, quiet: boo
                     tmp.write(protocols)
                     replaced = True
                 else:
-                    tmp.write("{}".format(line))
+                    tmp.write(f"{line}")
             if not replaced:
                 tmp.write(protocols)
         os.replace(tmp.name, filename)
@@ -276,12 +296,7 @@ def write_protocols(protocols: str, filename: str, tty: bool = False, quiet: boo
         if not quiet:
             util.msg(
                 message=f"{txt.API_CONF_PROTOCOLS}", urgency=txt.INF_CLR, tty=tty)
-            # print(".: {} {}".format(txt.INF_CLR, txt.API_CONF_PROTOCOLS))
     except OSError as err:
         util.msg(
             message=f"{txt.CANNOT_READ_FILE}: {err.filename}: {err.strerror}", urgency=txt.ERR_CLR, tty=tty)
-        # print(".: {} {}: {}: {}".format(txt.ERR_CLR,
-        #                                 txt.CANNOT_READ_FILE,
-        #                                 err.filename,
-        #                                 err.strerror))
         sys.exit(2)
