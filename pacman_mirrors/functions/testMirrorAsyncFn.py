@@ -86,19 +86,19 @@ def test_mirror_pool_async(self, worklist: list, limit=None) -> list:
                 mirror_result = mirror.result()
                 if mirror_result is not None:
                     result.append(mirror_result)
-            except concurrent.futures.CancelledError as e:
+            except concurrent.futures.CancelledError:
                 # Silence task cancellation exceptions
-                print(f"Cancelled task: {e}")
                 pass
         # If there is a limit, wait until
         if limit is not None:
             cancel_fut.result()
     except KeyboardInterrupt:
+        util.msg("Interrupted", txt.ERR_CLR, newline=True)
         executor._threads.clear()
         concurrent.futures.thread._threads_queues.clear()
         raise
-    except concurrent.futures._base.TimeoutError as e:
-        print(f"Timeout url: {e}")
+    except concurrent.futures._base.TimeoutError:
+        util.msg("Timeout reached", txt.INF_CLR)
         executor._threads.clear()
         concurrent.futures.thread._threads_queues.clear()
 
