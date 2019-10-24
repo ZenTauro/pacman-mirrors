@@ -21,7 +21,7 @@
 """Pacman-Mirrors Test Mirror Functions"""
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import time
+import concurrent.futures
 
 from pacman_mirrors.constants import txt, colors as color
 from pacman_mirrors.functions.httpFn import get_mirror_response
@@ -64,9 +64,11 @@ def test_mirror_pool_async(self, worklist: list, limit=None) -> list:
             workers_num = 14
         else:
             workers_num = limit
+    workers_num = 100
 
     # Create the threadpool and submit a task per mirror
-    with ThreadPoolExecutor(max_workers=workers_num) as executor, ThreadPoolExecutor(max_workers=1) as canceler:
+    with ThreadPoolExecutor(max_workers=workers_num) as executor, \
+            ThreadPoolExecutor(max_workers=1) as canceler:
         mirrors_future = {executor.submit(mirror_fn,
                                           self,
                                           executor,
@@ -78,18 +80,28 @@ def test_mirror_pool_async(self, worklist: list, limit=None) -> list:
         if limit is not None:
             cancel_fut = canceler.submit(job_canceler, limit, mirrors_future)
         # Get results as they resolve
-        for mirror in as_completed(mirrors_future):
-            # noinspection PyBroadException
-            try:
-                mirror_result = mirror.result()
-                if mirror_result is not None:
-                    result.append(mirror_result)
-            except Exception as e:
-                # Silence task cancellation exceptions
-                pass
-        # If there is a limit, wait until
-        if limit is not None:
-            cancel_fut.result()
+        try:
+            for mirror in as_completed(mirrors_future, timeout=self.max_wait_time):
+                # noinspection PyBroadException
+                try:
+                    mirror_result = mirror.result()
+                    if mirror_result is not None:
+                        result.append(mirror_result)
+                except concurrent.futures.CancelledError as e:
+                    # Silence task cancellation exceptions
+                    print(f"Cancelled task: {e}")
+                    pass
+            # If there is a limit, wait until
+            if limit is not None:
+                cancel_fut.result()
+        except KeyboardInterrupt:
+            executor._threads.clear()
+            concurrent.futures.thread._threads_queues.clear()
+            raise
+        except concurrent.futures._base.TimeoutError as e:
+            print(f"Timeout url: {e}")
+            executor._threads.clear()
+            concurrent.futures.thread._threads_queues.clear()
 
     return result
 
@@ -109,7 +121,7 @@ def job_canceler(limit: int, futures: list) -> None:
                 future.cancel()
             # print(f"::{color.BLUE}Killed {color.RESET} - Counter: {counter}")
             break
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
 
 def mirror_fn(self, executor, mirror: dict, limit, cols):
