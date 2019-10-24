@@ -64,44 +64,46 @@ def test_mirror_pool_async(self, worklist: list, limit=None) -> list:
             workers_num = 14
         else:
             workers_num = limit
-    workers_num = 100
 
     # Create the threadpool and submit a task per mirror
-    with ThreadPoolExecutor(max_workers=workers_num) as executor, \
-            ThreadPoolExecutor(max_workers=1) as canceler:
-        mirrors_future = {executor.submit(mirror_fn,
-                                          self,
-                                          executor,
-                                          mirror,
-                                          limit,
-                                          cols):
-                          mirror for mirror in worklist}
-        # Submit canceller job if there is a limit
+    executor = ThreadPoolExecutor(max_workers=workers_num)
+    canceler = ThreadPoolExecutor(max_workers=1)
+    mirrors_future = {executor.submit(mirror_fn,
+                                      self,
+                                      executor,
+                                      mirror,
+                                      limit,
+                                      cols):
+                      mirror for mirror in worklist}
+    # Submit canceller job if there is a limit
+    if limit is not None:
+        cancel_fut = canceler.submit(job_canceler, limit, mirrors_future)
+    # Get results as they resolve
+    try:
+        for mirror in as_completed(mirrors_future, timeout=self.max_wait_time):
+            # noinspection PyBroadException
+            try:
+                mirror_result = mirror.result()
+                if mirror_result is not None:
+                    result.append(mirror_result)
+            except concurrent.futures.CancelledError as e:
+                # Silence task cancellation exceptions
+                print(f"Cancelled task: {e}")
+                pass
+        # If there is a limit, wait until
         if limit is not None:
-            cancel_fut = canceler.submit(job_canceler, limit, mirrors_future)
-        # Get results as they resolve
-        try:
-            for mirror in as_completed(mirrors_future, timeout=self.max_wait_time):
-                # noinspection PyBroadException
-                try:
-                    mirror_result = mirror.result()
-                    if mirror_result is not None:
-                        result.append(mirror_result)
-                except concurrent.futures.CancelledError as e:
-                    # Silence task cancellation exceptions
-                    print(f"Cancelled task: {e}")
-                    pass
-            # If there is a limit, wait until
-            if limit is not None:
-                cancel_fut.result()
-        except KeyboardInterrupt:
-            executor._threads.clear()
-            concurrent.futures.thread._threads_queues.clear()
-            raise
-        except concurrent.futures._base.TimeoutError as e:
-            print(f"Timeout url: {e}")
-            executor._threads.clear()
-            concurrent.futures.thread._threads_queues.clear()
+            cancel_fut.result()
+    except KeyboardInterrupt:
+        executor._threads.clear()
+        concurrent.futures.thread._threads_queues.clear()
+        raise
+    except concurrent.futures._base.TimeoutError as e:
+        print(f"Timeout url: {e}")
+        executor._threads.clear()
+        concurrent.futures.thread._threads_queues.clear()
+
+    executor.shutdown(wait=False)
+    canceler.shutdown(wait=False)
 
     return result
 
